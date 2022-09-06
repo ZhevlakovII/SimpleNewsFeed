@@ -9,6 +9,7 @@ import com.bumptech.glide.Glide
 import com.izhxx.simplenewsfeed.R
 import com.izhxx.simplenewsfeed.data.entities.NewsEntity
 import com.izhxx.simplenewsfeed.databinding.NewsFeedItemBinding
+import kotlin.random.Random
 
 class NewsAdapter : ListAdapter<NewsEntity, RecyclerView.ViewHolder>(NewsDiffCallback()) {
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): RecyclerView.ViewHolder {
@@ -38,6 +39,7 @@ class NewsAdapter : ListAdapter<NewsEntity, RecyclerView.ViewHolder>(NewsDiffCal
                 news = item
 
                 binding.newsDate.text = item.publishedDate.split('T')[0]
+                binding.iconRandom.setImageResource(getRandomIcon())
 
                 Glide
                     .with(binding.root)
@@ -45,6 +47,18 @@ class NewsAdapter : ListAdapter<NewsEntity, RecyclerView.ViewHolder>(NewsDiffCal
                     .centerCrop()
                     .placeholder(R.drawable.ic_image_load_failed)
                     .into(binding.newsImage)
+            }
+        }
+
+        fun getRandomIcon(): Int {
+
+            return when (Random.nextInt(0, 4)) {
+                1 -> R.drawable.ic_apple
+                2 -> R.drawable.ic_cherries
+                3 -> R.drawable.ic_cantaloupe
+                4 -> R.drawable.ic_image_load_failed
+                0 -> R.drawable.ic_launcher_foreground
+                else -> R.drawable.ic_launcher_background
             }
         }
     }

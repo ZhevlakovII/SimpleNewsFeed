@@ -8,4 +8,5 @@
     <string name="news_date">2022-05-01 12:24:24</string>
     <string name="news_image_description">A news image</string>
     <string name="news_author">Captain Jack</string>
+    <string name="a_random_icon">A random icon</string>
 </resources>
