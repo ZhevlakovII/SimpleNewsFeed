@@ -3,10 +3,6 @@
 
     <!-- Strings used for fragments for navigation -->
     <string name="news_feed_label">News Feed Fragment</string>
-    <string name="news_title">This is title!</string>
-    <string name="news_description">This is description, but length is undefined :9\nIt\'s second line! \n:O Third line? Or this line is max length is 29999</string>
-    <string name="news_date">2022-05-01 12:24:24</string>
     <string name="news_image_description">A news image</string>
-    <string name="news_author">Captain Jack</string>
     <string name="a_random_icon">A random icon</string>
 </resources>
