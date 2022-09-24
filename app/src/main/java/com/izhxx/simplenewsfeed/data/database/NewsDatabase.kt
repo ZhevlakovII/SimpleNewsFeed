@@ -19,8 +19,8 @@ abstract class NewsDatabase : RoomDatabase() {
             }
         }
 
-        private fun buildDatabase(contex: Context): NewsDatabase {
-            return Room.databaseBuilder(contex, NewsDatabase::class.java, DATABASE_NAME)
+        private fun buildDatabase(context: Context): NewsDatabase {
+            return Room.databaseBuilder(context, NewsDatabase::class.java, DATABASE_NAME)
                 .fallbackToDestructiveMigration()
                 .build()
         }

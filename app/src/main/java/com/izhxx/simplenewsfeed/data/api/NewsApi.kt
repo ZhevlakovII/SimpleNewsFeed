@@ -1,7 +1,7 @@
 package com.izhxx.simplenewsfeed.data.api
 
-import com.izhxx.simplenewsfeed.data.entities.NewsEntity
-import com.izhxx.simplenewsfeed.utils.API_KEY
+
+import com.izhxx.simplenewsfeed.BuildConfig
 import okhttp3.OkHttpClient
 import okhttp3.logging.HttpLoggingInterceptor
 import retrofit2.Response
@@ -12,7 +12,7 @@ import retrofit2.http.Headers
 import retrofit2.http.Query
 
 interface NewsApi {
-    @Headers("x-api-key: $API_KEY")
+    @Headers("x-api-key: ${BuildConfig.API_KEY}")
     @GET("v2/top-headlines")
     suspend fun getNews(
         @Query("country") country: String,

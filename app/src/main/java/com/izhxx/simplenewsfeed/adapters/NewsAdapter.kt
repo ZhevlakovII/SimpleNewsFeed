@@ -50,7 +50,7 @@ class NewsAdapter : ListAdapter<NewsEntity, RecyclerView.ViewHolder>(NewsDiffCal
             }
         }
 
-        fun getRandomIcon(): Int {
+        private fun getRandomIcon(): Int {
 
             return when (Random.nextInt(0, 4)) {
                 1 -> R.drawable.ic_apple

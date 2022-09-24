@@ -6,6 +6,10 @@ plugins {
     id 'androidx.navigation.safeargs.kotlin'
 }
 
+def apiPropertiesFile = rootProject.file("api.properties")
+def apiProperties = new Properties()
+apiProperties.load(new FileInputStream(apiPropertiesFile))
+
 android {
     compileSdk 32
 
@@ -15,6 +19,9 @@ android {
         targetSdk 32
         versionCode 1
         versionName "0.1"
+
+        buildConfigField("String", "API_KEY", apiProperties['API_KEY'])
+        buildConfigField("String", "BASE_URL", apiProperties['BASE_NEWS_URL'])
 
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
     }
