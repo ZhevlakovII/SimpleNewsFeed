@@ -1,4 +1,4 @@
-package com.izhxx.simplenewsfeed.ui
+package com.izhxx.simplenewsfeed.presenter.main
 
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity

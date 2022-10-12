@@ -7,7 +7,7 @@
 
     <fragment
         android:id="@+id/FirstFragment"
-        android:name="com.izhxx.simplenewsfeed.ui.NewsFeedFragment"
+        android:name="com.izhxx.simplenewsfeed.presenter.news.NewsFeedFragment"
         android:label="@string/news_feed_label"
         tools:layout="@layout/fragment_news_feed">
     </fragment>
