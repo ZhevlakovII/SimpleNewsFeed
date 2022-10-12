@@ -1,11 +1,12 @@
 package com.izhxx.simplenewsfeed.data.repositories
 
+import androidx.paging.Pager
+import androidx.paging.PagingConfig
+import androidx.paging.PagingData
 import com.izhxx.simplenewsfeed.data.api.NewsApi
-import com.izhxx.simplenewsfeed.data.api.NewsApiResponse
-import com.izhxx.simplenewsfeed.utils.Result
-import kotlinx.coroutines.Dispatchers
-import kotlinx.coroutines.withContext
-import java.lang.Exception
+import com.izhxx.simplenewsfeed.data.api.Articles
+import com.izhxx.simplenewsfeed.utils.DEFAULT_PAGE_SIZE
+import kotlinx.coroutines.flow.Flow
 import javax.inject.Inject
 import javax.inject.Singleton
 
@@ -13,20 +14,13 @@ import javax.inject.Singleton
 class NewsRemoteRepository @Inject constructor(
     private val api: NewsApi
 ) {
-    suspend fun getNews(
-        country: String,
-        category: String,
-        pageSize: Int,
-        pageNum: Int
-    ): Result<NewsApiResponse> = withContext(Dispatchers.IO) {
-        try {
-            val response = api.getNews(country, category, pageSize, pageNum)
-            if (response.isSuccessful)
-                return@withContext Result.Successful(response.body()!!)
-            else
-                return@withContext Result.Error(Exception(response.message()))
-        } catch (e: Exception) {
-            return@withContext Result.Error(e)
-        }
+    fun getNews(): Flow<PagingData<Articles>> {
+        return Pager(
+            config = PagingConfig(
+                pageSize = DEFAULT_PAGE_SIZE,
+                enablePlaceholders = false
+            ),
+            pagingSourceFactory = { NewsPagingSource(api) }
+        ).flow
     }
 }
