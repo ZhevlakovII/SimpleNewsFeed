@@ -18,7 +18,7 @@
         android:theme="@style/Theme.SimpleNewsFeed"
         tools:targetApi="31">
         <activity
-            android:name=".ui.MainActivity"
+            android:name=".presenter.main.MainActivity"
             android:exported="true"
             android:theme="@style/Theme.SimpleNewsFeed.NoActionBar">
             <intent-filter>

@@ -5,4 +5,5 @@
     <string name="news_feed_label">News Feed Fragment</string>
     <string name="news_image_description">A news image</string>
     <string name="a_random_icon">A random icon</string>
+    <string name="error_text">Some error</string>
 </resources>
