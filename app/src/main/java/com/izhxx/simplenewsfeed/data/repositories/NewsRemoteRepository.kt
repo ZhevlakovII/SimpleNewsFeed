@@ -4,14 +4,9 @@ import androidx.paging.Pager
 import androidx.paging.PagingConfig
 import androidx.paging.PagingData
 import com.izhxx.simplenewsfeed.data.api.NewsApi
-import com.izhxx.simplenewsfeed.data.api.NewsApiResponse
-import com.izhxx.simplenewsfeed.common.Result
 import com.izhxx.simplenewsfeed.data.api.Articles
 import com.izhxx.simplenewsfeed.utils.DEFAULT_PAGE_SIZE
-import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.flow.Flow
-import kotlinx.coroutines.withContext
-import java.lang.Exception
 import javax.inject.Inject
 import javax.inject.Singleton
 
